@@ -9,6 +9,7 @@
     "private": true,
     "scripts": {
         "dev": "tsx watch src/server.ts",
+        "seed": "tsx src/seed/run.ts",
         "pre-build": "rimraf dist/",
         "build": "tsc --build",
         "serve": "tsx dist/src/server.js",
@@ -31,6 +32,7 @@
         "cors": "^2.8.6",
         "dotenv": "^17.4.2",
         "express": "^5.2.1",
+        "mongoose": "^9.7.2",
         "morgan": "^1.10.1"
     }
 }

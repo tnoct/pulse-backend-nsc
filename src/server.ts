@@ -1,9 +1,10 @@
 import express from "express";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
+import "dotenv/config";
+import { connectDB } from "./config/db";
 import routes from "./routes";
 import cors from "./middlewares/cors";
-import "dotenv/config";
 
 const app = express();
 
@@ -12,10 +13,16 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api", cors, routes);
+
 const port = process.env.NODE_PORT;
 
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-});
+const startServer = async () => {
+    await connectDB();
+    app.listen(port, () => {
+        console.log(`Server running on http://localhost:${port}`);
+    });
+};
+
+startServer();
 
 export default app;
