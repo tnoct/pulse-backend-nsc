@@ -46,30 +46,30 @@ yarn seed
 yarn dev
 ```
 
-The server will be available at `http://localhost:4004`.
+The server will be available at `http://localhost:<port_number_from_env>`.
 
 ## API Endpoints
 
-| Method | Endpoint       | Description                        |
-|--------|----------------|------------------------------------|
-| GET    | /api/metrics   | Returns all project metric records |
+| Method | Endpoint     | Description                        |
+| ------ | ------------ | ---------------------------------- |
+| GET    | /api/metrics | Returns all project metric records |
 
 ### Sample Response
 
 ```json
 {
-  "success": true,
-  "count": 6,
-  "data": [
-    {
-      "_id": "...",
-      "name": "Alpha Dashboard",
-      "status": "active",
-      "completionRate": 72,
-      "activeUsers": 34,
-      "timestamp": "2026-01-10T00:00:00.000Z"
-    }
-  ]
+    "success": true,
+    "count": 6,
+    "data": [
+        {
+            "_id": "...",
+            "name": "Alpha Dashboard",
+            "status": "active",
+            "completionRate": 72,
+            "activeUsers": 34,
+            "timestamp": "2026-01-10T00:00:00.000Z"
+        }
+    ]
 }
 ```
 
@@ -90,10 +90,10 @@ src/
 
 ## Available Scripts
 
-| Command          | Description                              |
-|------------------|------------------------------------------|
-| `yarn dev`       | Start the server in watch mode           |
-| `yarn seed`      | Seed the database with sample data       |
-| `yarn build`     | Compile TypeScript to `dist/`            |
-| `yarn serve`     | Serve the compiled build                 |
-| `yarn format`    | Format source files with Prettier        |
+| Command       | Description                        |
+| ------------- | ---------------------------------- |
+| `yarn dev`    | Start the server in watch mode     |
+| `yarn seed`   | Seed the database with sample data |
+| `yarn build`  | Compile TypeScript to `dist/`      |
+| `yarn serve`  | Serve the compiled build           |
+| `yarn format` | Format source files with Prettier  |
